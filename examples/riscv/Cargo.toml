@@ -1,10 +1,15 @@
 [package]
 name = "embassy-riscv-examples"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2024"
 
 [dependencies]
+defmt = "1.0.1"
+embassy-embedded-hal = { version = "0.4.0", path = "../../embassy-embedded-hal" }
 embassy-executor = { version = "0.8.0", path = "../../embassy-executor", features = ["arch-riscv32", "executor-thread"] }
-riscv-rt = { version = "0.15.0" }
+embassy-time = { version = "0.4.0", path = "../../embassy-time", features = ["defmt", "defmt-timestamp-uptime", "tick-hz-32_768"] }
+embassy-time-driver = { version = "0.2.0", path = "../../embassy-time-driver" }
 riscv = { version = "0.14.0", features = ["critical-section-single-hart"] }
+riscv-rt = { version = "0.15.0" }
 semihosting = { version = "0.1.20", features = ["stdio", "panic-handler"] }
+embassy-riscv-hal = { version = "0.0.1", path = "../../embassy-riscv-hal", features = ["time" ]}
