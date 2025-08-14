@@ -12,7 +12,10 @@ documentation = "https://docs.embassy.dev/embassy-riscv"
 [dependencies]
 embassy-time = { version = "0.4.0", path = "../embassy-time" }
 embassy-time-driver = { version = "0.2.0", path = "../embassy-time-driver" }
-embassy-embedded-hal = { version = "0.4.0", path = "../embassy-embedded-hal", default-features = false }
+embassy-time-queue-utils = { version = "0.2", path = "../embassy-time-queue-utils" }
+critical-section = "1.1.2"
+riscv = { version = "0.14.0", features = ["critical-section-single-hart"] }
+riscv-rt = { version = "0.15.0" }
 
-[features]
-time = ["embassy-embedded-hal/time"]
+#[features]
+#time = ["embassy-embedded-hal/time"]
