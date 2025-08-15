@@ -1,0 +1,21 @@
+[package]
+name = "embassy-riscv-hal"
+version = "0.0.1"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Embassy Hardware Abstraction Layer (HAL) for RISCV mictoronctroller"
+keywords = ["embedded", "async", "riscv", "hal", "embedded-hal"]
+categories = ["embedded", "hardware-support", "no-std", "asynchronous"]
+repository = "https://github.com/embassy-rs/embassy"
+documentation = "https://docs.embassy.dev/embassy-riscv"
+
+[dependencies]
+embassy-time = { version = "0.4.0", path = "../embassy-time" }
+embassy-time-driver = { version = "0.2.0", path = "../embassy-time-driver" }
+embassy-time-queue-utils = { version = "0.2", path = "../embassy-time-queue-utils" }
+critical-section = "1.1.2"
+riscv = { version = "0.14.0", features = ["critical-section-single-hart"] }
+riscv-rt = { version = "0.15.0" }
+
+#[features]
+#time = ["embassy-embedded-hal/time"]
