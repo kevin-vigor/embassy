@@ -6,9 +6,10 @@ edition = "2024"
 [dependencies]
 embassy-embedded-hal = { version = "0.4.0", path = "../../embassy-embedded-hal" }
 embassy-executor = { version = "0.8.0", path = "../../embassy-executor", features = ["arch-riscv32", "executor-thread"] }
+embassy-sync = { version = "0.7.1", path = "../../embassy-sync" }
 embassy-time = { version = "0.4.0", path = "../../embassy-time", features = ["defmt", "defmt-timestamp-uptime", "tick-hz-10_000_000"] }
 embassy-time-driver = { version = "0.2.0", path = "../../embassy-time-driver" }
-riscv = { version = "0.14.0", features = ["critical-section-single-hart"] }
-riscv-rt = { version = "0.15.0" }
+riscv = { version = "0.14.0", path = "/home/kvigor/riscv/riscv"}
+riscv-rt = { version = "0.15.0", path = "/home/kvigor/riscv/riscv-rt"}
 semihosting = { version = "0.1.20", features = ["stdio", "panic-handler"] }
 embassy-riscv-hal = { version = "0.0.1", path = "../../embassy-riscv-hal" }

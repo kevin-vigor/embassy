@@ -36,8 +36,8 @@ PROVIDE(_pre_init_trap = _default_abort);
    the other HARTS stuck in a busy loop. Note that _default_mp_hook cannot be overwritten.
    We use PROVIDE to avoid compilation errors in single hart targets, not to allow users
    to overwrite the symbol. */
-PROVIDE(_default_mp_hook = abort);
-PROVIDE(_mp_hook = _default_mp_hook);
+
+PROVIDE(hal_main = main);
 
 /* Default trap entry point. If not _start_trap symbol is provided, then _start_trap maps to
    _default_start_trap, which saves caller saved registers, calls _start_trap_rust, restores
@@ -121,9 +121,6 @@ PROVIDE(_start_MachineExternal_trap = _start_DefaultHandler_trap);
 
 PROVIDE(_stext = ORIGIN(REGION_TEXT));
 PROVIDE(_stack_start = ORIGIN(REGION_STACK) + LENGTH(REGION_STACK));
-PROVIDE(_max_hart_id = 0);
-PROVIDE(_hart_stack_size = 2K);
-PROVIDE(_heap_size = 0);
 
 SECTIONS
 {

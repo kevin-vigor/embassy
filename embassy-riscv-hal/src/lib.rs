@@ -2,6 +2,7 @@
 
 use riscv::register::mstatus;
 
+mod spinlock;
 mod time_driver;
 
 pub fn init() {

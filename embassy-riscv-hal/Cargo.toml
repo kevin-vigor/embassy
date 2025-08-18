@@ -13,9 +13,9 @@ documentation = "https://docs.embassy.dev/embassy-riscv"
 embassy-time = { version = "0.4.0", path = "../embassy-time" }
 embassy-time-driver = { version = "0.2.0", path = "../embassy-time-driver" }
 embassy-time-queue-utils = { version = "0.2", path = "../embassy-time-queue-utils" }
-critical-section = "1.1.2"
-riscv = { version = "0.14.0", features = ["critical-section-single-hart"] }
-riscv-rt = { version = "0.15.0" }
+critical-section = { version = "1.1.2", features = ["restore-state-bool"] }
+riscv = { version = "0.14.0", path = "/home/kvigor/riscv/riscv" }
+riscv-rt = { version = "0.15.0", path = "/home/kvigor/riscv/riscv-rt"}
 
 #[features]
 #time = ["embassy-embedded-hal/time"]

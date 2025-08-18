@@ -4,7 +4,7 @@ MEMORY
   RAM : ORIGIN = 0x80000000, LENGTH = 1M
 }
 
-PROVIDE(_max_hart_id = 0);
+PROVIDE(_max_hart_id = 2);
 PROVIDE(_hart_stack_size = 2K);
 PROVIDE(_heap_size = 0);
 
